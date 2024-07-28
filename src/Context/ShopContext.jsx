@@ -17,13 +17,13 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(() => {
-    fetch('http://localhost:4000/allproducts') 
+    fetch('https://shooper-backend.vercel.app/allproducts') 
           .then((res) => res.json()) 
           .then((data) => setProducts(data))
 
     if(localStorage.getItem("auth-token"))
     {
-      fetch('http://localhost:4000/getcart', {
+      fetch('https://shooper-backend.vercel.app/getcart', {
       method: 'POST',
       headers: {
         Accept:'application/form-data',
